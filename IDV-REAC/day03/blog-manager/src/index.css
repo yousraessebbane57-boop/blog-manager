@@ -1,0 +1,584 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+
+/* ==============================
+   GLOBAL STYLES
+============================== */
+
+:root {
+  font-family: 'DM Sans', sans-serif;
+  color: #292633;
+  background: #faf9f6;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  line-height: 1.7;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+/* ==============================
+   HEADER
+============================== */
+
+.header {
+  min-height: 82px;
+  padding: 18px 8%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  border-bottom: 1px solid #eeeae5;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 25px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.header nav {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.header nav a {
+  transition: color 0.2s ease;
+}
+
+.header nav a:hover {
+  color: #8065bd;
+}
+
+/* ==============================
+   HOME PAGE
+============================== */
+
+.home {
+  min-height: 75vh;
+  padding: 100px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 24px;
+}
+
+.home h1 {
+  max-width: 850px;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(40px, 6vw, 68px);
+  line-height: 1.15;
+  letter-spacing: -1.5px;
+}
+
+.home p {
+  max-width: 620px;
+  color: #77727e;
+  font-size: 16px;
+}
+
+.home .subtitle {
+  color: #8065bd;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 4px;
+}
+
+.home .author {
+  color: #292633;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* ==============================
+   BUTTONS
+============================== */
+
+.primary-button {
+  display: inline-block;
+  padding: 13px 28px;
+  border: 1px solid #8065bd;
+  border-radius: 6px;
+  background: #8065bd;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.primary-button:hover {
+  background: #6b50a7;
+  transform: translateY(-2px);
+}
+
+/* ==============================
+   PAGES
+============================== */
+
+.page {
+  min-height: 75vh;
+  padding: 65px 8%;
+}
+
+.page h1,
+.article-details h1 {
+  font-family: 'Playfair Display', serif;
+}
+
+/* ==============================
+   ARTICLE GRID
+============================== */
+
+.article-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+  margin-top: 35px;
+}
+
+.article-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 28px;
+  background: white;
+  border: 1px solid #eeeae5;
+  border-radius: 10px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.article-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(40, 30, 60, 0.07);
+}
+
+.article-card span,
+.article-details span {
+  color: #8065bd;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.article-card h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 23px;
+  line-height: 1.3;
+}
+
+.article-card p,
+.article-card small {
+  color: #77727e;
+}
+
+.empty-state {
+  margin-top: 100px;
+  text-align: center;
+  color: #77727e;
+}
+
+/* ==============================
+   ARTICLE CARD META
+============================== */
+
+.article-card-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  color: #77727e;
+  font-size: 13px;
+}
+
+.article-card-meta small {
+  font-size: 12px;
+  color: #99939f;
+}
+
+/* ==============================
+   ARTICLE CARD LINKS
+============================== */
+
+.article-card-link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.article-card-link:hover .article-card-title {
+  color: #6c4ce3;
+}
+
+/* ==============================
+   SEARCH AND FILTERS
+============================== */
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin: 25px 0;
+}
+
+.search-bar input,
+.search-bar select {
+  height: 44px;
+  padding: 0 15px;
+  border: 1px solid #e5e0dc;
+  border-radius: 7px;
+  background: white;
+  color: #292633;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.search-bar input {
+  flex: 1;
+  min-width: 220px;
+}
+
+.search-bar input::placeholder {
+  color: #99939f;
+}
+
+.search-bar select {
+  min-width: 155px;
+  cursor: pointer;
+}
+
+.search-bar input:focus,
+.search-bar select:focus {
+  border-color: #8065bd;
+  box-shadow: 0 0 0 3px rgba(128, 101, 189, 0.1);
+}
+
+.search-bar select:hover {
+  border-color: #8065bd;
+}
+
+/* ==============================
+   CREATE ARTICLE FORM
+============================== */
+
+.article-form {
+  max-width: 650px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 30px;
+}
+
+.article-form input,
+.article-form textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid #e5e0dc;
+  border-radius: 7px;
+  background: white;
+  outline: none;
+}
+
+.article-form input:focus,
+.article-form textarea:focus {
+  border-color: #8065bd;
+  box-shadow: 0 0 0 3px rgba(128, 101, 189, 0.1);
+}
+
+.article-form textarea {
+  min-height: 180px;
+  resize: vertical;
+}
+
+.article-form button {
+  align-self: flex-start;
+}
+
+.error-message {
+  color: #c0394b;
+}
+
+/* ==============================
+   ARTICLE DETAILS
+============================== */
+
+.article-details {
+  max-width: 850px;
+  min-height: 75vh;
+  margin: auto;
+  padding: 75px 25px;
+}
+
+.article-details h1 {
+  margin: 18px 0;
+  font-size: clamp(32px, 5vw, 48px);
+  line-height: 1.2;
+}
+
+.article-meta {
+  margin-bottom: 35px;
+  color: #88828e;
+  font-size: 14px;
+}
+
+.article-content {
+  margin-bottom: 30px;
+  color: #4d4953;
+  white-space: pre-wrap;
+  line-height: 2;
+}
+
+/* ==============================
+   EDIT AND DELETE BUTTONS
+============================== */
+
+.article-card-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.edit-button,
+.delete-button {
+  padding: 9px 18px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.edit-button {
+  background: #8065bd;
+  color: white;
+}
+
+.edit-button:hover {
+  background: #6b50a7;
+}
+
+.delete-button {
+  background: #fff0f0;
+  color: #c0392b;
+}
+
+.delete-button:hover {
+  background: #ffdddd;
+}
+
+/* ==============================
+   EDIT ARTICLE MODAL
+============================== */
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(30, 25, 40, 0.55);
+  backdrop-filter: blur(3px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.edit-modal {
+  background: #faf9f6;
+  width: 100%;
+  max-width: 650px;
+  padding: 35px;
+  border-radius: 12px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.modal-header h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 27px;
+}
+
+.modal-header button {
+  border: none;
+  background: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: #77727e;
+}
+
+/* ==============================
+   EDIT FORM
+============================== */
+
+.edit-modal form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.edit-modal label {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: -8px;
+}
+
+.edit-modal input,
+.edit-modal textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid #e5e0dc;
+  border-radius: 7px;
+  background: white;
+  outline: none;
+  font: inherit;
+}
+
+.edit-modal input:focus,
+.edit-modal textarea:focus {
+  border-color: #8065bd;
+  box-shadow: 0 0 0 3px rgba(128, 101, 189, 0.1);
+}
+
+.edit-modal textarea {
+  min-height: 200px;
+  resize: vertical;
+}
+
+/* ==============================
+   MODAL ACTIONS
+============================== */
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+.modal-actions button {
+  padding: 11px 20px;
+  border: 1px solid #8065bd;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.modal-actions button[type="button"] {
+  background: white;
+  color: #8065bd;
+}
+
+.modal-actions button[type="button"]:hover {
+  background: #f0ebf8;
+}
+
+.modal-actions button[type="submit"] {
+  background: #8065bd;
+  color: white;
+}
+
+.modal-actions button[type="submit"]:hover {
+  background: #6b50a7;
+}
+
+/* ==============================
+   FOOTER
+============================== */
+
+.footer {
+  padding: 28px 20px;
+  border-top: 1px solid #eeeae5;
+  background: white;
+  color: #88828e;
+  text-align: center;
+  font-size: 13px;
+}
+
+/* ==============================
+   RESPONSIVE DESIGN
+============================== */
+
+@media (max-width: 600px) {
+  .header {
+    flex-direction: column;
+    gap: 14px;
+    padding: 20px;
+  }
+
+  .header nav {
+    gap: 18px;
+    font-size: 13px;
+  }
+
+  .home {
+    padding: 75px 20px;
+  }
+
+  .page {
+    padding: 45px 20px;
+  }
+
+  .article-details {
+    padding: 50px 20px;
+  }
+
+  .edit-modal {
+    padding: 22px;
+  }
+
+  .modal-actions {
+    flex-direction: column-reverse;
+  }
+
+  .modal-actions button {
+    width: 100%;
+  }
+
+  .search-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .search-bar input,
+  .search-bar select {
+    width: 100%;
+  }
+}
